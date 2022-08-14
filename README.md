@@ -22,22 +22,7 @@
   </a>
 </p>
 
-```console
-$ agnee -h
-
-Find sensitive information using Dorks.
-
-USAGE:
-    agnee -d domain.tld
-
-OPTIONS:
-    -d DOMAIN, --domain DOMAIN  Define the domain to scan
-    -a, --all                   Use all search-engines (default "Bing")
-    -e ENGINE, --engine ENGINE  List of search-engines to use [-e "bing, google"] (comma separated)
-    -o OUTPUT, --output OUTPUT  Save the results in the output file
-    -p PAGE, --page PAGE        Number of pages to scrape
-    -q, --quite                 Suppress all the output
-```
+<p align="center"><img src=".github/static/usage.png" alt="Agnee usage"></p>
 
 ---
 
@@ -55,7 +40,7 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip
 
 + **Simple usage arguments**
     
-    ```console
+    ```bash
     agnee -d testphp.vulnweb.com
 
     https://www.exploit-db.com/ghdb/6630
@@ -65,7 +50,7 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip
 
 + **To use a specific engine**
 
-    ```console
+    ```bash
     agnee -d testphp.vulnweb.com -e yahoo
 
     Yahoo Dork: inurl:"/.git" testphp.vulnweb.com -github
@@ -76,13 +61,13 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip
     ```
 
 + **To search specific number of pages**
-    ```console
+    ```bash
     agnee -d testphp.vulnweb.com -p 1
 	```
 	
 + **Use all the search-engines**
 
-    ```console
+    ```bash
     agnee -d testphp.vulnweb.com -all
     ```
     > **Note**: Sometimes google may block your requests so you need to wait for few hours.
