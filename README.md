@@ -34,7 +34,6 @@ OPTIONS:
     -d DOMAIN, --domain DOMAIN  Define the domain to scan
     -a, --all                   Use all search-engines (default "Bing")
     -e ENGINE, --engine ENGINE  List of search-engines to use [-e "bing, google"] (comma separated)
-    -h, --help                  show this help message and exit
     -o OUTPUT, --output OUTPUT  Save the results in the output file
     -p PAGE, --page PAGE        Number of pages to scrape
     -q, --quite                 Suppress all the output
@@ -46,9 +45,7 @@ Agnee uses [`search_engines`](https://github.com/tasos-py/Search-Engines-Scraper
 
 ### Installation
 
-<br>
-
-```console
+```css
 sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip3 install agnee
 ```
 
@@ -81,7 +78,8 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip
 + **To search specific number of pages**
     ```console
     agnee -d testphp.vulnweb.com -p 1
-
+	```
+	
 + **Use all the search-engines**
 
     ```console
