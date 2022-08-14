@@ -7,7 +7,7 @@ CREDITS https://github.com/tasos-py FOR THE SEARCH_ENGINES LIBRARY
 """
 
 #@> IMPORTING ALL DEPENDENCIES
-from search_engines import Google, Bing, Yahoo, config
+from search_engines import Google, Bing, Yahoo, Startpage, config
 from tldextract import extract
 from sys import stdout, exit
 from random import choice
@@ -51,6 +51,7 @@ bsearch = Bing()
 # dsearch = Duckduckgo()
 gsearch = Google()
 ysearch = Yahoo()
+ssearch = Startpage()
 
 """User-agent list (random library will choose it randomly)"""
 agntList = [
@@ -178,6 +179,27 @@ def yahoSearch():
                 stdout.write(str(links) + '\n')
         sleep(2)
 
+def starSearch():
+    """
+    Startpage search function
+    """
+    for dork in dorks:
+        sdork = '\n' + "Startpage Dork: %s" % (str(dork)) + '\n'
+        if cmd.output is not None:
+            saveFile(cmd.output, sdork)
+        if not cmd.quite:
+            stdout.write(str(sdork) + '\n')
+        ssearch.set_headers({'User-Agent': uagents})
+        sout = ssearch.search(str(dork), cmd.page)
+        for links in sout.links():
+            if cmd.output is not None:
+                stdout.write(str(links) + '\n')
+                saveFile(cmd.output, links)
+            elif cmd.quite:
+                saveFile(cmd.output, links)
+            else:
+                stdout.write(str(links) + '\n')
+        sleep(2)
 
 def main():
     try:
@@ -196,6 +218,8 @@ def main():
                     googSearch()
                 elif s == "yahoo":
                     yahoSearch()
+                elif s == "startpage":
+                    starSearch()
     except KeyboardInterrupt:
         """
         If ctrl+c is pressed
