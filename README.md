@@ -30,7 +30,7 @@ Agnee uses [`search_engines`](https://github.com/tasos-py/Search-Engines-Scraper
 
 ### Installation
 
-```bash
+```css
 sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sudo pip3 install agnee
 ```
 
