@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AGNEE v1.0
+AGNEE v1.1
 AUTHOR: ESHAN SINGH (R0X4R)
 
 CREDITS https://github.com/tasos-py FOR THE SEARCH_ENGINES LIBRARY
@@ -18,11 +18,12 @@ def parse_args():
     """
     Parse command line arguments
     """
-    parser = argparse.ArgumentParser(description="Find sensitive information using Dorks.", usage="agnee -d domain.tld")
+    parser = argparse.ArgumentParser(description="Find sensitive information using Dorks.", usage="agnee -d domain.tld", add_help=False)
     parser._optionals.title = "OPTIONS"
 
-    parser.add_argument("-d", "--domain", dest="domain", help="Define the domain to scan", required=True)
+    parser.add_argument("-d", "--domain", dest="domain", help="Define the domain to scan")
     parser.add_argument("-a", "--all", dest="all", help="Use all search-engines (default \"Bing\")", action='store_true')
+    parser.add_argument("-h", "--help", dest="help", action='store_true')
     parser.add_argument("-e", "--engine", dest="engine", help="List of search-engines to use [-e \"bing, google\"] (comma separated)", default="bing")
     parser.add_argument("-o", "--output", dest="output", help="Save the results in the output file")
     parser.add_argument("-p", "--page", dest="page", help="Number of pages to scrape", default=config.SEARCH_ENGINE_RESULTS_PAGES, type=int)
@@ -30,28 +31,61 @@ def parse_args():
     
     return parser.parse_args()
 
-cmd = parse_args() 
+cmd = parse_args()
+
+#@> DEFINING COLOR VARIABLES
+R = '\033[91m'
+W = '\033[0m'
+Y = '\033[93m'
+
+def usage():
+    print("""
+Find sensitive information using dorks from different search-engines.
+
+USAGE:
+    %sagnee -d domain.tld%s
+
+OPTIONS:
+    -d, --domain    string    Define the domain to scan
+    -e, --engine    string    List of search-engines to use [-e "bing, google"] (comma separated)
+    -a, --all                 Use all search-engines (default "Bing")
+    -h, --help                Show this help message and exit
+    -o, --output    string    Save the results in the output file
+    -p, --page      int       Number of pages to scrape results.
+    -q, --quite               Suppress all the output and store in the file.
+    """ % (Y, W))
+
+if cmd.help:
+    usage()
+    exit()
+
+if cmd.domain is None:
+    usage()
+    print("[%sERROR%s] %sPlease add domain to scan using -d/--domain.%s" % (R, W, Y, W))
+    exit()
 
 if not cmd.engine is None or not cmd.all:
     engines = [
             e.strip() for e in cmd.engine.lower().split(',')
         ]
 else:
-    print("Please choose an engine or use --all (agnee -h)")
-    exit(127)
+    usage()
+    print("[%sERROR%s] %sPlease choose an engine or use --all%s" % (R, W, Y, W))
+    exit()
 
 if cmd.quite:
     if cmd.output is None:
-        print("Please specify the output file using -o/--output")
-        exit(127)
+        usage()
+        print("[%sERROR%s] %sPlease specify the output file using -o/--output%s" % (R, W, Y, W))
+        exit()
 
-"""Declaring variables"""
+#@> DECLARING SEARCH VARIABLES
 odomain = extract(str(cmd.domain)).domain
 bsearch = Bing()
-# dsearch = Duckduckgo()
 gsearch = Google()
 ysearch = Yahoo()
 ssearch = Startpage()
+# dsearch = Duckduckgo()
 
 """User-agent list (random library will choose it randomly)"""
 agntList = [
@@ -205,15 +239,13 @@ def main():
     try:
         if cmd.all:
             bingSearch()
-            # duckSearch()
+            starSearch()
             googSearch()
             yahoSearch()
         else:
             for s in engines:
                 if s == "bing":
                     bingSearch()
-                # elif s == "duckduckgo":
-                    # duckSearch()
                 elif s == "google":
                     googSearch()
                 elif s == "yahoo":
