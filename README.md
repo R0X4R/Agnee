@@ -31,7 +31,7 @@ Agnee uses [`search_engines`](https://github.com/tasos-py/Search-Engines-Scraper
 ### Installation
 
 ```bash
-sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && pip3 install agnee
+sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sudo pip3 install agnee
 ```
 
 > **Note**: Before installing agnee you must need git and python3 installed on your system.
