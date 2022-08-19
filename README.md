@@ -30,7 +30,7 @@ Agnee uses [`search_engines`](https://github.com/tasos-py/Search-Engines-Scraper
 
 ### Installation
 
-```css
+```bash
 sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sudo pip3 install agnee
 ```
 
@@ -76,7 +76,7 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sud
 ### Donate
 If this tool helped you or you like my work
 
-|[`https://www.buymeacoffee.com/R0X4R`](https://www.buymeacoffee.com/R0X4R)|[`https://pmny.in/bIKNZngt4ys1`](https://pmny.in/bIKNZngt4ys1)|[`https://ko-fi.com/i/IK3K34SJSA`](https://ko-fi.com/i/IK3K34SJSA)|
+|[`buymeacoffee.com/R0X4R`](https://www.buymeacoffee.com/R0X4R)|[`pmny.in/bIKNZngt4ys1`](https://pmny.in/bIKNZngt4ys1)|[`ko-fi.com/R0X4R`](https://ko-fi.com/i/IK3K34SJSA)|
 |--------|--------|------|
 
 **Warning:** This code was originally created for personal use, do not abuse the traffic, please use with caution.
