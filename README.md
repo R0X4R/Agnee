@@ -30,7 +30,7 @@ Agnee uses [`search_engines`](https://github.com/tasos-py/Search-Engines-Scraper
 
 ### Installation
 
-```css
+```bash
 sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sudo pip3 install agnee
 ```
 
@@ -40,8 +40,8 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sud
 
 + **Simple usage arguments**
     
-    ```bash
-    agnee -d testphp.vulnweb.com
+    ```css
+    $ agnee -d testphp.vulnweb.com
 
     https://www.exploit-db.com/ghdb/6630
     https://www.exploit-db.com/ghdb/5665
@@ -50,8 +50,8 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sud
 
 + **To use a specific engine**
 
-    ```bash
-    agnee -d testphp.vulnweb.com -e yahoo
+    ```css
+    $ agnee -d testphp.vulnweb.com -e yahoo
 
     Yahoo Dork: inurl:"/.git" testphp.vulnweb.com -github
 
@@ -61,19 +61,22 @@ sudo pip3 install git+https://github.com/R0X4R/Search-Engines-Scraper.git && sud
     ```
 
 + **To search specific number of pages**
-    ```bash
-    agnee -d testphp.vulnweb.com -p 1
-	```
+    ```css
+    $ agnee -d testphp.vulnweb.com -p 1
+    ```
 	
 + **Use all the search-engines**
 
-    ```bash
-    agnee -d testphp.vulnweb.com -all
+    ```css
+    $ agnee -d testphp.vulnweb.com -all
     ```
     > **Note**: Sometimes google may block your requests so you need to wait for few hours.
-<br>
+---
 
 ### Donate
 If this tool helped you or you like my work
 
-</br><a href="https://www.buymeacoffee.com/R0X4R"><img src="https://img.buymeacoffee.com/button-api/?text=Help me to buy oscp&emoji=😇&slug=R0X4R&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"/></a> <a style=" width: 135px; background-color: #1065b7; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; " href='https://pmny.in/bIKNZngt4ys1'> Donate Now </a>   <a href="https://ko-fi.com/i/IK3K34SJSA"><img src="https://ko-fi.com/img/githubbutton_sm.svg"></a><br/><br/>
+|[`buymeacoffee.com/R0X4R`](https://www.buymeacoffee.com/R0X4R)|[`pmny.in/bIKNZngt4ys1`](https://pmny.in/bIKNZngt4ys1)|[`ko-fi.com/R0X4R`](https://ko-fi.com/i/IK3K34SJSA)|
+|--------|--------|------|
+
+**Warning:** This code was originally created for personal use, do not abuse the traffic, please use with caution.
